@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'newrelic_rpm'
 gem 'ordrin'
 gem 'yelp', require: 'yelp'
 gem "geocoder"
