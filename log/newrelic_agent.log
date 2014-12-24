@@ -1,0 +1,20 @@
+# Logfile created on 2014-12-23 16:38:24 -0800 by logger.rb/44203
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Starting the New Relic agent in "development" environment.
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Reading configuration from config/newrelic.yml (/Users/toannl/wdi1011/projects/3project/feedme)
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : New Relic Agent Developer Mode enabled.
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Environment: development
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Dispatcher: webrick
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Application: My Application (Development)
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing ActiveRecord 4 instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing Net instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing deferred Rack instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing Rack::Builder middleware instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing Rails 3+ middleware instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing Rails 4 Controller instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing Rails 4 view instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Installing Rails 4 Error instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Finished instrumentation
+[12/23/14 16:38:24 -0800 ToanMBP.local (28270)] INFO : Doing deferred dependency-detection before Rack startup
+[12/23/14 16:38:25 -0800 ToanMBP.local (28270)] INFO : Reporting to: https://rpm.newrelic.com/accounts/854769/applications/4633057
+[12/23/14 16:38:26 -0800 ToanMBP.local (28270)] INFO : Starting Agent shutdown
