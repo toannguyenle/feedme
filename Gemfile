@@ -18,7 +18,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
 end
 # Unicorn
-# gem 'unicorn'
+gem 'unicorn'
 
 # Rails Templates Helper
 gem 'angular-rails-templates'
