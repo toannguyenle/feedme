@@ -1,0 +1,77 @@
+<h1>Listing orders</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product count</th>
+      <th>Processing time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.product_count %></td>
+        <td><%= order.processing_time %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+
+<h1>Listing restaurants</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Phone number</th>
+      <th>Yelp_id</th>
+      <th>Image Url</th>
+      <th>Categories</th>
+      <th>Lat</th>
+      <th>Lng</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if current_user.restaurants %> 
+    <% current_user.restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.website %></td>
+        <td><%= restaurant.phone_number %></td>
+        <td><%= restaurant.yelp_id %></td>
+        <td><%= image_tag(restaurant.image_url, width: "50px") %></td>
+        <td><%= restaurant.categories %></td>
+        <td><%= restaurant.lat %></td>
+        <td><%= restaurant.lng %></td>
+        <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete%></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>
+>>>>>>> master
+=======
+>>>>>>> master

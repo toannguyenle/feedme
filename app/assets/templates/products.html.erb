@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3 text-center">
+    <div id="map-canvas"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3 text-center">
+    <!-- TEST TO BE DELETE-->
+    <div class="food-item row">
+      <div class="dislike-item col-xs-2 col-sm-2 col-md-2">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </div>
+
+      <div class="col-xs-8 col-sm-8 col-md-8 text-center">
+        <input class="form-control input-lg" ng-model="query" placeholder="search">
+      </div>
+
+      <div class="like-item col-xs-2 col-sm-2 col-md-2">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <!-- FOOD OPTIONS HERE EACH AT A TIME -->
+    <div class="food-item row" ng-repeat="item in products track by $index| orderBy: distance_miles | filter:query">
+      <div class="dislike-item col-xs-2 col-sm-2 col-md-2" ng-click="removeItem(item)">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </div>
+
+      <div class="col-xs-8 col-sm-8 col-md-8 text-center" ng-click="showRestaurantInfo(item)">
+        {{item.restaurantId}},
+        {{item.restaurantName}},
+        {{item.deliveryTime}},
+        {{item.minimumAmount}},
+        {{item.cuisine}},
+        {{item.ordrnId}},
+        {{item.name}},
+        {{item.categories}},
+        {{item.price}},
+        {{item.descrip}}
+      </div>
+
+      <div class="like-item col-xs-2 col-sm-2 col-md-2" ng-click="addItemToCard(item)">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</div>

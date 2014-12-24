@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="wrapper col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4"> 
+      <h1><%= @product.restaurant.name %></h1>
+
+      <strong>Name:</strong>
+      <%= @product.name %><br>
+
+      <strong>Categories:</strong>
+      <%= @product.categories %><br>
+
+      <strong>Description:</strong>
+      <%= @product.description %><br>
+
+      <strong>Image</strong>
+      <%= image_tag(@product.image_urls, width: "50px") %><br>
+
+      <strong>Regular price:</strong>
+      <%= @product.regular_price %><br>
+
+      <strong>Discount price:</strong>
+      <%= @product.discount_price %><br>
+
+      <strong>Discount start time:</strong>
+      <%= @product.discount_start_time.strftime("%I:%M %p") %><br>
+
+      <strong>Discount end time:</strong>
+      <%= @product.discount_end_time.strftime("%I:%M %p") %><br>
+
+      <strong>Discount inventory:</strong>
+      <%= @product.discount_inventory %><br>
+
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %>
+  </div>
+</div>
