@@ -1,81 +1,57 @@
-Feedmeapp::Application.routes.draw do
-  # For Authentication
+Rails.application.routes.draw do
   root 'home#index'
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
-  # Rerouting everything else to index page
-  # get '*path' => 'application#index'
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
 
-  #added for Authentication
-  get 'signup', to: 'users#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
-  post 'login', to: 'sessions#create'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
 
-  resources :sessions
-  # Order Product Path
-  get 'orderproducts/:id' => 'orderproducts#show', as: :orderproduct
-  get 'orderproducts/:id/edit' => 'orderproducts#edit', as: :edit_orderproduct
-  patch 'orderproducts/:id' => 'orderproducts#update'
-  delete 'orderproducts/:id' => 'orderproducts#destroy', as: :orderproducts
-  # API ROUTES
-  scope 'api', defaults: {format: :json} do
-    get 'wdi/:api_key' => 'products#wdi'
-  end
-  # Restaurants Routes
-  get 'restaurants/' => 'restaurants#index'
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  get 'restaurants/:id/business_yelp' => 'restaurants#business_yelp', as: :yelp
-  post 'restaurants/:id' => 'restaurants#claim_business', as: :claim_business
+  # Example resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
 
-  get 'restaurants/new' => 'restaurants#new', as: :new_restaurant
-  get 'restaurants/:id' => 'restaurants#show', as: :restaurant
-  post 'restaurants/' => 'restaurants#create'
-  get 'restaurants/:id/edit' => 'restaurants#edit', as: :edit_restaurant
-  patch 'restaurants/:id' => 'restaurants#update'
-  delete 'restaurants/:id' => 'restaurants#destroy'
-  
-  # Products Routes
-  get 'products/' => 'products#index'
-  # get 'products/:ordrin' => 'products#ordrin_search', as: 'ordrin_search'
-  get 'products/new' => 'products#new', as: :new_product
-  get 'products/:id' => 'products#show', as: :product
-  post 'products/' => 'products#create'
-  get 'products/:id/edit' => 'products#edit', as: :edit_product
-  patch 'products/:id' => 'products#update'
-  delete 'products/:id' => 'products#destroy'
+  # Example resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
 
-  # User Routes
-  get 'users/' => 'users#index'
-  get 'users/new' => 'users#new', as: :new_user
-  get 'users/new_business' => 'users#new_business', as: :new_business
-  get 'users/:id' => 'users#show', as: :user
-  post 'users/' => 'users#create'
-  get 'users/:id/edit' => 'users#edit', as: :edit_user
-  patch 'users/:id' => 'users#update'
-  delete 'users/:id' => 'users#destroy'
+  # Example resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
 
-  # Order Routes
-  get 'orders/' => 'orders#index'
-  get 'orders/new' => 'orders#new', as: :new_order
-  #Additional routes for creating new order
-  post 'orders/new' => 'orders#add_to_current_order', as: :add_to_current_order 
-  # Custom routes
-  get 'orders/confirmation/:id' => 'orders#confirmation', as: :order_confirmation
-  post 'orders/:id' => 'orders#complete_order', as: :complete_order 
-  
-  get 'orders/:id' => 'orders#show', as: :order
-  post 'orders/' => 'orders#create'
-  get 'orders/:id/edit' => 'orders#edit', as: :edit_order
-  patch 'orders/:id' => 'orders#update'
-  delete 'orders/:id' => 'orders#destroy'
+  # Example resource route with more complex sub-resources:
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', on: :collection
+  #     end
+  #   end
 
-  # Payment Routes
-  get 'payments/' => 'payments#index'
-  get 'payments/new' => 'payments#new', as: :new_payment
-  get 'payments/:id' => 'payments#show', as: :payment
-  post 'payments/' => 'payments#create'
-  get 'payments/:id/edit' => 'payments#edit', as: :edit_payment
-  patch 'payments/:id' => 'payments#update'
-  delete 'payments/:id' => 'payments#destroy'
-  
+  # Example resource route with concerns:
+  #   concern :toggleable do
+  #     post 'toggle'
+  #   end
+  #   resources :posts, concerns: :toggleable
+  #   resources :photos, concerns: :toggleable
+
+  # Example resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
 end

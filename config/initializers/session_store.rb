@@ -1,2 +1,3 @@
 # Be sure to restart your server when you modify this file.
-Feedmeapp::Application.config.session_store :cookie_store, key: '_feedmeapp_session'
+
+Rails.application.config.session_store :cookie_store, key: '_nacholibra_rails_session'
