@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     # doc.css('.titleListTitle').each do |link|
     #   puts link.content
     # end
-    render 'works'
+    render html:'works'
   end
 end
 
